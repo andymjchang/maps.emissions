@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://UI/Roboto_Mono/roboto_mono.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/logo2.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://UI/basic_text_edit_focus.tres" type="StyleBox" id=8]
 [ext_resource path="res://UI/basic_text_edit.tres" type="StyleBox" id=9]
 [ext_resource path="res://Assets/andy_icon.png" type="Texture" id=10]
+[ext_resource path="res://Assets/GitHub_logo-3727426454.png" type="Texture" id=11]
 
 [sub_resource type="StyleBoxFlat" id=7]
 content_margin_left = 8.0
@@ -81,6 +82,14 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
 
 [node name="TestMain" type="Control"]
 anchor_right = 1.0
@@ -214,25 +223,50 @@ margin_bottom = -261.0
 position = Vector2( 94, 956 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="Dav" type="AnimatedSprite" parent="ProjectInfo"]
 position = Vector2( 296, 956 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Hacktf" type="RichTextLabel" parent="ProjectInfo"]
 margin_left = 80.0
 margin_top = 892.0
 margin_right = 740.0
-margin_bottom = 1025.0
+margin_bottom = 1005.0
 custom_fonts/normal_font = ExtResource( 3 )
 text = "Hack the Future 2023
 
 	Andy Chang		Davinderpal Toor"
+
+[node name="GithubLink" type="Button" parent="."]
+margin_left = 78.0
+margin_top = 712.0
+margin_right = 283.0
+margin_bottom = 761.0
+mouse_filter = 1
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+
+[node name="LinkButton" type="LinkButton" parent="GithubLink"]
+margin_left = 65.0
+margin_top = 10.0
+margin_right = 332.0
+margin_bottom = 60.0
+mouse_filter = 1
+custom_fonts/font = ExtResource( 3 )
+text = "Github Page"
+underline = 1
+
+[node name="Sprite" type="Sprite" parent="GithubLink"]
+position = Vector2( 2, -1 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 11 )
+centered = false
 
 [connection signal="text_changed" from="Starting" to="." method="_on_Starting_text_changed"]
 [connection signal="text_changed" from="Destination" to="." method="_on_Destination_text_changed"]
@@ -240,3 +274,4 @@ text = "Hack the Future 2023
 [connection signal="drag_started" from="HSlider" to="." method="_on_HSlider_drag_started"]
 [connection signal="request_completed" from="RequestDriving" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="CalculateButton" to="." method="_on_CalculateButton_pressed"]
+[connection signal="pressed" from="GithubLink" to="." method="_on_GithubLink_pressed"]

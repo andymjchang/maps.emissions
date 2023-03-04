@@ -64,3 +64,6 @@ func _on_Starting_text_changed(new_text):
 
 func _on_Destination_text_changed(new_text):
 	dest = new_text
+
+func _on_GithubLink_pressed():
+	OS.shell_open("https://github.com/andymjchang/maps.emissions")
