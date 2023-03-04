@@ -8,7 +8,7 @@ Time: %s
 Carbon Emission: %.4f kg
 Daily Commute for a week: %.4f kg"""
 const URL = "https://maps.googleapis.com/maps/api/directions/json?origin=%s&destination=%s&mode=%s&key=AIzaSyD2Fca93RM4jzsTIKrdvMBmtBfpqIein-Y"
-const FAILED = "Something was invalid in your input, try again"
+const FAILED = "Invalid input or CORS error"
 var origin = ""
 var dest = ""
 var mode = "driving" # driving or walking
