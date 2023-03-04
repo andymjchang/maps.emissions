@@ -83,17 +83,17 @@ margin_left = 251.0
 margin_top = 358.0
 margin_right = 712.0
 margin_bottom = 402.0
-max_value = 70.0
+max_value = 60.0
 step = 0.1
 value = 22.0
 
 [node name="CarIcon" type="Sprite" parent="HSlider"]
-position = Vector2( 147, -7 )
+position = Vector2( 171, -7 )
 scale = Vector2( 0.015, 0.015 )
 texture = ExtResource( 5 )
 
 [node name="Motorcycle-icon-png-29-2845481700" type="Sprite" parent="HSlider"]
-position = Vector2( 434, -7 )
+position = Vector2( 322, -7 )
 scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 6 )
 
