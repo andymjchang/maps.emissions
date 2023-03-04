@@ -12,7 +12,8 @@ config_version=4
 
 config/name="hacktf_2023"
 run/main_scene="res://Scenes/TestMain.tscn"
-config/icon="res://icon.png"
+run/low_processor_mode=true
+config/icon="res://logo_64.png"
 
 [display]
 
