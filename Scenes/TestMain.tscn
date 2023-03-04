@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/Roboto_Mono/roboto_mono.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/logo2.png" type="Texture" id=2]
 [ext_resource path="res://UI/Roboto_Mono/roboto_mono_small.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/info_icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/settings_icon.png" type="Texture" id=5]
 
 [node name="TestMain" type="Control"]
 anchor_right = 1.0
@@ -43,3 +45,19 @@ margin_bottom = 253.0
 custom_fonts/font = ExtResource( 3 )
 placeholder_text = "Enter destination..."
 placeholder_alpha = 0.4
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 78.0
+margin_top = 358.0
+margin_right = 570.0
+margin_bottom = 402.0
+
+[node name="InfoIcon" type="Sprite" parent="."]
+position = Vector2( 595, 64 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+
+[node name="SettingsIcon" type="Sprite" parent="."]
+position = Vector2( 647, 65 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
