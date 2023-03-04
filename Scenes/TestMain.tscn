@@ -3,7 +3,7 @@
 [ext_resource path="res://UI/Roboto_Mono/roboto_mono.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/logo2.png" type="Texture" id=2]
 [ext_resource path="res://UI/Roboto_Mono/roboto_mono_small.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Scripts/AndyTestMain.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/TestMain.gd" type="Script" id=4]
 [ext_resource path="res://Assets/car_icon.png" type="Texture" id=5]
 [ext_resource path="res://Assets/truck_icon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/horse_icon.png" type="Texture" id=7]
@@ -31,28 +31,44 @@ margin_bottom = 154.0
 custom_fonts/normal_font = ExtResource( 1 )
 text = "maps.emissions"
 
-[node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 78.0
-margin_top = 173.0
-margin_right = 570.0
-margin_bottom = 206.0
+[node name="Starting" type="LineEdit" parent="."]
+margin_left = 275.0
+margin_top = 175.0
+margin_right = 767.0
+margin_bottom = 212.0
 custom_fonts/font = ExtResource( 3 )
 placeholder_text = "Enter starting point..."
 placeholder_alpha = 0.4
 
-[node name="LineEdit2" type="LineEdit" parent="."]
-margin_left = 78.0
-margin_top = 220.0
-margin_right = 570.0
-margin_bottom = 253.0
+[node name="Destination" type="LineEdit" parent="."]
+margin_left = 275.0
+margin_top = 230.0
+margin_right = 767.0
+margin_bottom = 267.0
 custom_fonts/font = ExtResource( 3 )
 placeholder_text = "Enter destination..."
 placeholder_alpha = 0.4
 
+[node name="StartingLabel" type="RichTextLabel" parent="."]
+margin_left = 80.0
+margin_top = 178.0
+margin_right = 327.0
+margin_bottom = 222.0
+custom_fonts/normal_font = ExtResource( 3 )
+text = "Starting Point:"
+
+[node name="DestinationLabel" type="RichTextLabel" parent="."]
+margin_left = 80.0
+margin_top = 233.0
+margin_right = 327.0
+margin_bottom = 277.0
+custom_fonts/normal_font = ExtResource( 3 )
+text = "Destination:"
+
 [node name="HSlider" type="HSlider" parent="."]
-margin_left = 78.0
+margin_left = 125.0
 margin_top = 358.0
-margin_right = 570.0
+margin_right = 617.0
 margin_bottom = 402.0
 min_value = 10.0
 max_value = 34.0
@@ -72,21 +88,47 @@ position = Vector2( 369, -22 )
 texture = ExtResource( 6 )
 
 [node name="SliderVal" type="RichTextLabel" parent="."]
-margin_left = 580.0
+margin_left = 625.0
 margin_top = 364.0
-margin_right = 706.0
+margin_right = 751.0
 margin_bottom = 404.0
 custom_fonts/normal_font = ExtResource( 3 )
 text = "mpg"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 727.0
+[node name="DrivingOutputLabel" type="RichTextLabel" parent="."]
+margin_left = 800.0
 margin_top = 27.0
-margin_right = 1149.0
-margin_bottom = 598.0
+margin_right = 1250.0
+margin_bottom = 227.0
+rect_pivot_offset = Vector2( -1144, 414 )
 custom_fonts/normal_font = ExtResource( 3 )
-text = "EXAMPLE RESULTS:
+text = "DRIVING
 
-Distance: 1 km
-Time: 3 min
-Carbon Emission: 0.9 kg"
+Distance:
+Time:
+Carbon Emission:
+Twice a Day, 5 Times a Week:"
+
+[node name="WalkingOutputLabel" type="RichTextLabel" parent="."]
+margin_left = 800.0
+margin_top = 250.0
+margin_right = 1250.0
+margin_bottom = 450.0
+custom_fonts/normal_font = ExtResource( 3 )
+text = "WALKING
+
+Distance:
+Time:
+Carbon Emission:
+Twice a Day, 5 Times a Week:"
+
+[node name="RequestDriving" type="HTTPRequest" parent="."]
+
+[node name="RequestWalking" type="HTTPRequest" parent="."]
+
+[connection signal="text_entered" from="Starting" to="." method="_on_Starting_text_entered"]
+[connection signal="text_entered" from="Destination" to="." method="_on_Destination_text_entered"]
+[connection signal="drag_ended" from="HSlider" to="." method="_on_HSlider_drag_ended"]
+[connection signal="drag_started" from="HSlider" to="." method="_on_HSlider_drag_started"]
+[connection signal="request_completed" from="RequestDriving" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="request_completed" from="RequestWalking" to="." method="_on_RequestWalking_request_completed"]
