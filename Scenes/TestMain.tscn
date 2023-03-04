@@ -180,18 +180,16 @@ custom_fonts/normal_font = ExtResource( 3 )
 text = "22 mpg"
 
 [node name="DrivingOutputLabel" type="RichTextLabel" parent="."]
-margin_left = 870.0
-margin_top = 27.0
-margin_right = 1486.0
-margin_bottom = 227.0
+margin_left = 80.0
+margin_top = 588.0
+margin_right = 656.0
+margin_bottom = 788.0
 rect_pivot_offset = Vector2( -1144, 414 )
 custom_fonts/normal_font = ExtResource( 3 )
-text = "DRIVING
-
-Distance:
+text = "Distance:
 Time:
 Carbon Emission:
-Twice a Day, 5 Times a Week:"
+Daily Commute for a week:"
 
 [node name="RequestDriving" type="HTTPRequest" parent="."]
 
@@ -221,7 +219,6 @@ playing = true
 position = Vector2( 296, 956 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="Hacktf" type="RichTextLabel" parent="ProjectInfo"]
@@ -234,8 +231,9 @@ text = "Hack the Future 2023
 
 	Andy Chang		Davinderpal Toor"
 
-[connection signal="text_entered" from="Starting" to="." method="_on_Starting_text_entered"]
-[connection signal="text_entered" from="Destination" to="." method="_on_Destination_text_entered"]
+[connection signal="text_changed" from="Starting" to="." method="_on_Starting_text_changed"]
+[connection signal="text_changed" from="Destination" to="." method="_on_Destination_text_changed"]
 [connection signal="drag_ended" from="HSlider" to="." method="_on_HSlider_drag_ended"]
 [connection signal="drag_started" from="HSlider" to="." method="_on_HSlider_drag_started"]
 [connection signal="request_completed" from="RequestDriving" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="CalculateButton" to="." method="_on_CalculateButton_pressed"]
