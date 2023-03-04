@@ -36,13 +36,11 @@ func make_request():
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	if response_code != 200:
 		$DrivingOutputLabel.text = FAILED
-		request_walking()
 		return
 	var json = JSON.parse(body.get_string_from_utf8())
 	json = json.result
 	if(json.status == "NOT_FOUND"):
 		$DrivingOutputLabel.text = FAILED
-		request_walking()
 		return
 	var data = json.routes[0].legs
 	
@@ -51,7 +49,7 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var time = data[0].duration.text
 	var emissions = CO2 * distance_km / fuel_economy
 	$DrivingOutputLabel.text = BASE_OUTPUT % [distance_km, distance_mi, time, emissions, emissions * 2 * 5]
-	request_walking()
+
 	
 func request_walking():
 	mode = "walking"
