@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/Roboto_Mono/roboto_mono.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/logo2.png" type="Texture" id=2]
 [ext_resource path="res://UI/Roboto_Mono/roboto_mono_small.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/TestMain.gd" type="Script" id=4]
 
 [node name="TestMain" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1920.0
@@ -26,7 +28,7 @@ margin_bottom = 154.0
 custom_fonts/normal_font = ExtResource( 1 )
 text = "maps.emissions"
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="Starting" type="LineEdit" parent="."]
 margin_left = 78.0
 margin_top = 173.0
 margin_right = 570.0
@@ -35,7 +37,7 @@ custom_fonts/font = ExtResource( 3 )
 placeholder_text = "Enter starting point..."
 placeholder_alpha = 0.4
 
-[node name="LineEdit2" type="LineEdit" parent="."]
+[node name="Destination" type="LineEdit" parent="."]
 margin_left = 78.0
 margin_top = 220.0
 margin_right = 570.0
@@ -43,3 +45,9 @@ margin_bottom = 253.0
 custom_fonts/font = ExtResource( 3 )
 placeholder_text = "Enter destination..."
 placeholder_alpha = 0.4
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="text_entered" from="Starting" to="." method="_on_Starting_text_entered"]
+[connection signal="text_entered" from="Destination" to="." method="_on_Destination_text_entered"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
