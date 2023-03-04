@@ -17,9 +17,10 @@ config/icon="res://logo_64.png"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
+window/size/width=1500
+window/size/height=800
 window/handheld/orientation="portrait"
+window/stretch/mode="2d"
 
 [gui]
 
