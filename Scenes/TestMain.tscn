@@ -180,10 +180,10 @@ custom_fonts/normal_font = ExtResource( 3 )
 text = "22 mpg"
 
 [node name="DrivingOutputLabel" type="RichTextLabel" parent="."]
-margin_left = 80.0
-margin_top = 588.0
-margin_right = 656.0
-margin_bottom = 788.0
+margin_left = 901.0
+margin_top = 162.0
+margin_right = 1477.0
+margin_bottom = 362.0
 rect_pivot_offset = Vector2( -1144, 414 )
 custom_fonts/normal_font = ExtResource( 3 )
 text = "Distance:
@@ -206,19 +206,22 @@ custom_styles/normal = ExtResource( 9 )
 text = "Calculate"
 
 [node name="ProjectInfo" type="Control" parent="."]
+margin_top = -301.0
 margin_right = 40.0
-margin_bottom = 40.0
+margin_bottom = -261.0
 
 [node name="Andy" type="AnimatedSprite" parent="ProjectInfo"]
 position = Vector2( 94, 956 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Dav" type="AnimatedSprite" parent="ProjectInfo"]
 position = Vector2( 296, 956 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Hacktf" type="RichTextLabel" parent="ProjectInfo"]
