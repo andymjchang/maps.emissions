@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/car_icon.png-4252a3b1f79f8203f453a164babffaf3.stex"
+path="res://.import/219-2196736_png-file-svg-google-maps-bike-icon-transparent-1078468645.png-f4fe4d2cd39a6f4845f3b9f66e708f4a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/car_icon.png"
-dest_files=[ "res://.import/car_icon.png-4252a3b1f79f8203f453a164babffaf3.stex" ]
+source_file="res://Assets/219-2196736_png-file-svg-google-maps-bike-icon-transparent-1078468645.png"
+dest_files=[ "res://.import/219-2196736_png-file-svg-google-maps-bike-icon-transparent-1078468645.png-f4fe4d2cd39a6f4845f3b9f66e708f4a.stex" ]
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
