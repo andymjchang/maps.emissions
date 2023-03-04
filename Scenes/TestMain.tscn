@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/Roboto_Mono/roboto_mono.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/logo2.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/car_icon.png" type="Texture" id=5]
 [ext_resource path="res://Assets/truck_icon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/horse_icon.png" type="Texture" id=7]
+[ext_resource path="res://UI/basic_text_edit_focus.tres" type="StyleBox" id=8]
+[ext_resource path="res://UI/basic_text_edit.tres" type="StyleBox" id=9]
 
 [node name="TestMain" type="Control"]
 anchor_right = 1.0
@@ -16,7 +18,7 @@ script = ExtResource( 4 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
-color = Color( 0.176471, 0.180392, 0.188235, 1 )
+color = Color( 0.223529, 0.258824, 0.329412, 1 )
 
 [node name="Logo2" type="Sprite" parent="."]
 position = Vector2( 91, 66 )
@@ -33,19 +35,23 @@ text = "maps.emissions"
 
 [node name="Starting" type="LineEdit" parent="."]
 margin_left = 275.0
-margin_top = 175.0
+margin_top = 174.0
 margin_right = 767.0
-margin_bottom = 212.0
+margin_bottom = 211.0
 custom_fonts/font = ExtResource( 3 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
 placeholder_text = "Enter starting point..."
 placeholder_alpha = 0.4
 
 [node name="Destination" type="LineEdit" parent="."]
 margin_left = 275.0
-margin_top = 230.0
+margin_top = 228.0
 margin_right = 767.0
-margin_bottom = 267.0
+margin_bottom = 265.0
 custom_fonts/font = ExtResource( 3 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
 placeholder_text = "Enter destination..."
 placeholder_alpha = 0.4
 
