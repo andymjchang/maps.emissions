@@ -223,12 +223,14 @@ margin_bottom = -261.0
 position = Vector2( 94, 956 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="Dav" type="AnimatedSprite" parent="ProjectInfo"]
 position = Vector2( 296, 956 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Hacktf" type="RichTextLabel" parent="ProjectInfo"]
