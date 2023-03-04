@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://UI/Roboto_Mono/roboto_mono.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/logo2.png" type="Texture" id=2]
@@ -6,8 +6,42 @@
 [ext_resource path="res://Scenes/TestMain.gd" type="Script" id=4]
 [ext_resource path="res://Assets/car_icon.png" type="Texture" id=5]
 [ext_resource path="res://Assets/motorcycle-icon-png-29-2845481700.png" type="Texture" id=6]
+[ext_resource path="res://Assets/dav_icon.png" type="Texture" id=7]
 [ext_resource path="res://UI/basic_text_edit_focus.tres" type="StyleBox" id=8]
 [ext_resource path="res://UI/basic_text_edit.tres" type="StyleBox" id=9]
+[ext_resource path="res://Assets/andy_icon.png" type="Texture" id=10]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 10 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="TestMain" type="Control"]
 anchor_right = 1.0
@@ -71,7 +105,7 @@ custom_fonts/normal_font = ExtResource( 3 )
 text = "Destination:"
 
 [node name="FuelLabel" type="RichTextLabel" parent="."]
-margin_left = 84.0
+margin_left = 80.0
 margin_top = 365.0
 margin_right = 331.0
 margin_bottom = 452.0
@@ -135,6 +169,32 @@ Twice a Day, 5 Times a Week:"
 [node name="RequestDriving" type="HTTPRequest" parent="."]
 
 [node name="RequestWalking" type="HTTPRequest" parent="."]
+
+[node name="ProjectInfo" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Andy" type="AnimatedSprite" parent="ProjectInfo"]
+position = Vector2( 94, 956 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="Dav" type="AnimatedSprite" parent="ProjectInfo"]
+position = Vector2( 294, 956 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 6 )
+playing = true
+
+[node name="Hacktf" type="RichTextLabel" parent="ProjectInfo"]
+margin_left = 80.0
+margin_top = 892.0
+margin_right = 740.0
+margin_bottom = 1025.0
+custom_fonts/normal_font = ExtResource( 3 )
+text = "Hack the Future 2023
+
+	Andy Chang		Davinderpal Toor"
 
 [connection signal="text_entered" from="Starting" to="." method="_on_Starting_text_entered"]
 [connection signal="text_entered" from="Destination" to="." method="_on_Destination_text_entered"]
